@@ -213,7 +213,7 @@ color: #999;
     gap: 5px;
     height: 100%;
     align-items: center;
-    opacity: 0;
+   /* opacity: 0;*/
 
     &:hover {
         opacity: 1;
@@ -341,7 +341,14 @@ color: #999;
     transition: width .5s ease;
 }
 
-@media (hover: none) and (pointer: coarse) {
+@media (hover: hover) and (pointer: fine) {
+    .btn__container {
+        opacity: 0;
+    }
+}
+}
+
+@media (hover: none) and (pointer: coarse) and (pointer: none) {
     .btn__container {
         opacity: 1;
     }
@@ -480,9 +487,11 @@ color: #999;
         
         .counter__done-notdone {
             font-size: 16px;
+            margin-right: 10px;
         }
         
         .progress-bar {
+            right: 20px;
             bottom: 10px;
         }
 }
