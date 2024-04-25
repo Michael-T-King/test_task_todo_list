@@ -6,6 +6,8 @@
     list-style: none;
 }
 
+@media (prefers-color-scheme: dark) {
+
 body {
     height: 100vh;
     display: flex;
@@ -339,6 +341,7 @@ color: #999;
     color: #555;
     z-index: -1;
     transition: width .5s ease;
+    }
 }
 
 @media (hover: hover) and (pointer: fine) {

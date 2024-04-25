@@ -93,7 +93,7 @@ arr.reduce((acc, el) =>{
                     <p class="text">${idx+1}. ${el.text}</p>
                     <p class="date">(${date})</p>
                 </div>
-                <div class="btn__container">
+                <div class="btn__container" data-index="${idx}">
                     <button class="complete button" data-index="${idx}">&#x2713;</button>
                     <button class="delete button" data-index="${idx}">
                         <span class="material-symbols-outlined">delete_forever</span>
@@ -106,6 +106,7 @@ arr.reduce((acc, el) =>{
     `;
     }
 });
+
 
     const deleteBtn = document.querySelectorAll('.delete');
     deleteBtn.forEach(button => {
@@ -128,7 +129,6 @@ arr.reduce((acc, el) =>{
     favorite.style.opacity = arr[idx].favorite ? '1' : '0';
     });
 };
-
 
 let deleteTask = (event) => {
     let index = event.currentTarget.dataset.index;
