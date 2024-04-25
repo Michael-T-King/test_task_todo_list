@@ -57,6 +57,8 @@ body {
     -webkit-text-stroke: 1px black; 
     text-stroke: 1px black;
     cursor: pointer;
+    z-index: 999;
+
     &:active {
         -webkit-text-stroke: 0 transparent; 
         text-stroke: 0 transparent;
@@ -216,6 +218,9 @@ color: #999;
     &:hover {
         opacity: 1;
     }
+    &:active {
+        opacity: 1;
+    }
 }
 
 .button {
@@ -283,6 +288,12 @@ color: #999;
     'opsz' 24
     }
 
+    .favorite.material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'opsz' 24
+        }
+
 
 .counter__done {
     display: flex;
@@ -328,4 +339,150 @@ color: #999;
     color: #555;
     z-index: -1;
     transition: width .5s ease;
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .btn__container {
+        opacity: 1;
+    }
+}
+
+@media(max-width:725px) {
+    .well__done {
+        font-size: 50px;
+        margin-top: 100px;
+    }
+
+    .btn__close {
+        font-size: 50px;
+        width: 50px;
+        height: 50px;
+        right: 50px;
+        top: 150px;
+        }
+
+        .container {
+            width: 320px;
+            border-radius: 20px;
+            padding: 10px;
+            overflow-y: auto;
+        }
+        
+        
+        form {
+            width: 300px;
+            padding: 10px;
+            gap: 5px;
+        }
+        
+        input {
+            width: 280px;
+            height: 30px;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        
+        .btn__add {
+            width: 30px;
+            height: 30px;
+            border-radius: 10px;
+            font-size: 30px;
+        }
+        
+        .add__first-text {
+        margin-top: 30px;
+        font-size: 20px;
+
+        }
+        
+        .menu {
+            margin-left: 10px;
+            
+        }
+        
+        .menu__list {
+            gap: 8px;
+            font-size: 14px;           
+        }
+        
+        .menu__items {
+            height: 20px;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+        .task {
+            padding: 10px;
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .li__items {
+            min-height: 30px;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        
+        .text {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        
+        .date {
+            font-size: 10px;
+        }
+        
+        .button {
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+            font-size: 10px;
+        }
+        
+        .complete {
+            font-size: 14px;
+        }
+        
+        
+        .favorite {
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+            line-height: 0.2;
+        }
+        
+        .is__favorite.material-symbols-outlined {
+            width: 15px;
+             height: 15px;
+            font-size: 15px;
+            line-height: 15px;
+            font-variation-settings:
+            'FILL' 1,
+            'opsz' 1
+            }
+
+.button .material-symbols-outlined {
+    text-align: center;
+    width: 15px;
+    height: 15px;
+   font-size: 15px;
+   line-height: 15px;
+                }
+        
+        .counter__done {
+            bottom: 10px;
+            left: 10px;
+        }
+        
+        .counter__done-done {
+            font-size: 16px;
+        }
+        
+        .counter__done-notdone {
+            font-size: 16px;
+        }
+        
+        .progress-bar {
+            bottom: 10px;
+        }
 }
