@@ -65,6 +65,8 @@ arr.reduce((acc, el) =>{
             textContainer.style.display = 'flex';
             btnClose.style.display = 'flex';
             wellDone.style.opacity = i/100;
+            wellDone.style.zIndex = '999';
+            btnClose.style.zIndex = '999';
         }, i*10);
     }
 }
@@ -72,6 +74,8 @@ arr.reduce((acc, el) =>{
     wellDone.style.opacity = '0';
     btnClose.style.display = 'none';
     textContainer.style.display = 'none';
+    wellDone.style.zIndex = '-999';
+    btnClose.stylezIndex = '-999';
     }
 
     btnClose.addEventListener('click',() =>{
