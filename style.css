@@ -16,6 +16,7 @@ body {
     justify-content: center;
     margin: 0 auto;
     background-image: linear-gradient(to bottom, #73edf8, #56bbed);
+    overflow: hidden;
 }
 
 .text__conteiner {
@@ -142,6 +143,12 @@ color: #999;
     margin-left: 20px;
     
 }
+
+.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+  }
 
 .menu__list {
     display: flex;
