@@ -107,7 +107,6 @@ arr.reduce((acc, el) =>{
     }
 });
 
-
     const deleteBtn = document.querySelectorAll('.delete');
     deleteBtn.forEach(button => {
     button.addEventListener('click', deleteTask);
@@ -188,7 +187,6 @@ menu.forEach(item => {
     item.style.color = '#fff';
   });
 });
-
 
 loadTodoList();
 showTask();
