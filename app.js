@@ -33,7 +33,7 @@ function loadTodoList() {
 let showTask = () => {
     counterAllText.textContent = '0';
     counterDoneText.textContent = '0';
-    progresNum.textContent = '0';
+    progresNum.textContent = '0%';
     progress.style.width = '0';
 task.innerHTML = '';
 
@@ -91,8 +91,8 @@ arr.reduce((acc, el) =>{
         (menuState === 'Favorites' && el.favorite)) {
 
         task.innerHTML += `
-            <li class="li__items ${isCompleted}">
-                <div class="text__container">
+            <li class="li__items ${isCompleted}" data-index="${idx} style="display: flex;">
+                <div class="text__block" style="display: block;">
                     <span class="is__favorite material-symbols-outlined" data-index="${idx}">favorite</span>
                     <p class="text">${idx+1}. ${el.text}</p>
                     <p class="date">(${date})</p>
@@ -110,6 +110,25 @@ arr.reduce((acc, el) =>{
     `;
     }
 });
+
+
+
+const btnContainers = document.querySelectorAll('.btn__container');
+const liItems = document.querySelectorAll('.li__items');
+
+liItems.forEach((el, index) => {
+    const btnContainer = btnContainers[index];
+    el.addEventListener('mouseover', (e) => {
+        btnContainer.style.opacity = '1';
+        console.log('over');
+    });
+    el.addEventListener('mouseout', (e) => {
+        console.log('out');
+        btnContainer.style.opacity = '0';
+    });
+});
+
+
 
     const deleteBtn = document.querySelectorAll('.delete');
     deleteBtn.forEach(button => {
@@ -132,6 +151,11 @@ arr.reduce((acc, el) =>{
     favorite.style.opacity = arr[idx].favorite ? '1' : '0';
     });
 };
+
+
+
+
+
 
 let deleteTask = (event) => {
     let index = event.currentTarget.dataset.index;
@@ -173,23 +197,20 @@ form.addEventListener('submit', (e) => {
 menu.forEach(item => {
     item.addEventListener('click', () => {
         menuState = item.textContent.trim();
+        if (menuState === 'All') {
+            menu[0].style.backgroundColor = '#56bbed';
+            menu[0].style.color = '#fff';
+            }
+          item.addEventListener('click', () => {
+            menu.forEach(menuItem => {
+                menuItem.style.backgroundColor = 'transparent';
+                menuItem.style.color = '#56bbed';
+            });
+            item.style.backgroundColor = '#56bbed';
+            item.style.color = '#fff';
+          });
         showTask();
     });
-});
-
-menu.forEach(item => {
-    if (menuState === 'All') {
-    menu[0].style.backgroundColor = '#56bbed';
-    menu[0].style.color = '#fff';
-    }
-  item.addEventListener('click', () => {
-    menu.forEach(menuItem => {
-        menuItem.style.backgroundColor = 'transparent';
-        menuItem.style.color = '#56bbed';
-    });
-    item.style.backgroundColor = '#56bbed';
-    item.style.color = '#fff';
-  });
 });
 
 loadTodoList();

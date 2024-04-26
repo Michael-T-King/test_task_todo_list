@@ -76,7 +76,7 @@ body {
     background-color: antiquewhite;
     margin: 0  auto;
     border-radius: 30px;
-    padding: 20px;
+    padding: 20px 20px 0 20px;
     overflow-y: auto;
     flex-shrink: 1;
 }
@@ -146,12 +146,6 @@ margin: 20px 0;
     
 }
 
-.sticky {
-    position: sticky;
-    top: 0;
-    z-index: 5;
-  }
-
 .menu__list {
     display: flex;
     position: relative;
@@ -197,6 +191,7 @@ margin: 20px 0;
 
 .li__items {
     display: flex;
+    flex-direction: row;
     position: relative;
     justify-content: space-between;
     align-items: center;
@@ -208,6 +203,11 @@ margin: 20px 0;
     &:hover {
         box-shadow: 0 4px 6px 2px rgba(54, 30, 57, 0.5);
     }
+}
+
+.text__block {
+    position: relative;
+    display: block;
 }
 
 .text {
@@ -226,7 +226,7 @@ margin: 20px 0;
     gap: 5px;
     height: 100%;
     align-items: center;
-/* opacity: 0;*/
+ opacity: 0;
 
     &:hover {
         opacity: 1;
@@ -316,6 +316,7 @@ margin: 20px 0;
     justify-content: space-between;
     gap: 30px;
     flex-shrink: 1;
+    margin-bottom: 5px;
 }
 
 .counter__done {
@@ -362,17 +363,17 @@ margin: 20px 0;
     transition: width .5s ease;
     }
 
-@media (hover: hover) and (pointer: fine) {
+/*@media (hover: hover) and (pointer: fine) {
     .btn__container {
         opacity: 0;
     }
-}
+}*/
 
-@media (hover: none) and (pointer: coarse) and (pointer: none) {
+/*@media (hover: none) and (pointer: coarse) and (pointer: none) {
     .btn__container {
         opacity: 1;
     }
-}
+}*/
 
 @media(max-width:625px) {
     .well__done {
